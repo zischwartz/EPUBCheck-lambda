@@ -1,0 +1,63 @@
+{
+  "headers": {
+    "Host": "localhost:3000",
+    "Connection": "keep-alive",
+    "Content-Length": "1528",
+    "Cache-Control": "max-age=0",
+    "Origin": "http://localhost:8080",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
+    "Content-Type": "text/plain;charset=UTF-8",
+    "Accept": "*/*",
+    "Referer": "http://localhost:8080/",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9"
+  },
+  "multiValueHeaders": {
+    "Host": ["localhost:3000"],
+    "Connection": ["keep-alive"],
+    "Content-Length": ["1528"],
+    "Cache-Control": ["max-age=0"],
+    "Origin": ["http://localhost:8080"],
+    "User-Agent": [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
+    ],
+    "Content-Type": ["text/plain;charset=UTF-8"],
+    "Accept": ["*/*"],
+    "Referer": ["http://localhost:8080/"],
+    "Accept-Encoding": ["gzip, deflate, br"],
+    "Accept-Language": ["en-US,en;q=0.9"]
+  },
+  "path": "/gated_trigger_convert",
+  "pathParameters": null,
+  "requestContext": {
+    "accountId": "offlineContext_accountId",
+    "resourceId": "offlineContext_resourceId",
+    "apiId": "offlineContext_apiId",
+    "stage": "local",
+    "requestId": "offlineContext_requestId_5134492431377369",
+    "identity": {
+      "cognitoIdentityPoolId": "offlineContext_cognitoIdentityPoolId",
+      "accountId": "offlineContext_accountId",
+      "cognitoIdentityId": "offlineContext_cognitoIdentityId",
+      "caller": "offlineContext_caller",
+      "apiKey": "offlineContext_apiKey",
+      "sourceIp": "127.0.0.1",
+      "cognitoAuthenticationType": "offlineContext_cognitoAuthenticationType",
+      "cognitoAuthenticationProvider": "offlineContext_cognitoAuthenticationProvider",
+      "userArn": "offlineContext_userArn",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
+      "user": "offlineContext_user"
+    },
+    "authorizer": { "principalId": "offlineContext_authorizer_principalId" },
+    "protocol": "HTTP/1.1",
+    "resourcePath": "/gated_trigger_convert",
+    "httpMethod": "POST"
+  },
+  "resource": "/gated_trigger_convert",
+  "httpMethod": "POST",
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "stageVariables": null,
+  "body": "{\"epub_uri\":\"https://github.com/IDPF/epub3-samples/releases/download/20170606/accessible_epub_3.epub\"}",
+  "isOffline": true
+}

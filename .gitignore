@@ -1,0 +1,4 @@
+tmp
+layers/ec/nodejs/*
+!layers/ec/nodejs/.gitkeep
+.env

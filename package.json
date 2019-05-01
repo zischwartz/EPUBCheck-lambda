@@ -1,0 +1,13 @@
+{
+  "name": "EPUBCheck-lambda",
+  "version": "1.0.0",
+  "description": "Serverless epubcheck on aws lambda",
+  "main": "index.js",
+  "author": "Zach Schwartz",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "install-epubcheck": "cd layers/ec/nodejs/ && curl -sS -L https://github.com/w3c/epubcheck/releases/download/v4.2.0/epubcheck-4.2.0.zip > epubcheck-4.2.0.zip && unzip epubcheck-4.2.0.zip && rm epubcheck-4.2.0.zip && cd ../../..",
+    "r": "cat event.json | docker run --rm --env-file .env -v $PWD/tmp:/tmp -v $PWD:/var/task -v $PWD/layers/ec:/opt -i -e DOCKER_LAMBDA_USE_STDIN=1 lambci/lambda:nodejs8.10 handler.handler"
+  }
+}
