@@ -3,7 +3,7 @@ const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const fs = require("fs");
 
-const JAR_PATH = "/opt/nodejs/epubcheck-4.1.1/epubcheck.jar";
+const JAR_PATH = "/opt/nodejs/epubcheck-4.2.0/epubcheck.jar";
 
 module.exports.handler = async function(event, context) {
   // console.log(event);
@@ -30,6 +30,12 @@ module.exports.handler = async function(event, context) {
   } catch (e) {
     result = "'error'";
   }
+  try {
+    fs.unlinkSync("/tmp/result.json");
+    fs.unlinkSync("/tmp/book.epub");
+  } catch (e) {
+    //
+  }
   const response = {
     statusCode: 200,
     body: result,
@@ -42,20 +48,4 @@ module.exports.handler = async function(event, context) {
   };
 
   return response;
-  // console.log("stdout:", stdout);
-  // console.log("stderr:", stderr);
 };
-
-// "java -jar /opt/nodejs/epubcheck-4.1.1/epubcheck.jar"
-// `java -jar ${JAR_PATH} /var/task/book.epub`
-// `java -jar ${JAR_PATH} --version`
-
-// https://github.com/IDPF/epub3-samples/releases/download/20170606/accessible_epub_3.epub
-
-// const http = require('http');
-// const fs = require('fs');
-//
-// const file = fs.createWriteStream("file.jpg");
-// const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
-//   response.pipe(file);
-// });

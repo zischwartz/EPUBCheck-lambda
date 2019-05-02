@@ -1,0 +1,29 @@
+service: epubcheck-lambda
+provider:
+  name: aws
+  region: us-west-2
+  stage: ${opt:stage}
+  runtime: nodejs8.10
+  timeout: 30 # in seconds, default is 6
+
+package:
+  exclude:
+    - .DS_Store
+    - node_modules/**
+    - layers/**
+    - tmp/**
+
+layers:
+  ecDeps:
+    path: layers/ec
+functions:
+  check:
+    runtime: nodejs8.10
+    handler: handler.handler
+    events:
+      - http:
+          method: post
+          path: check
+          cors: true
+    layers:
+      - { Ref: EcDepsLambdaLayer }
