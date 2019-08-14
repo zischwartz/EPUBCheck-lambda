@@ -13,7 +13,9 @@ module.exports.handler = async function(event, context) {
   let origin = event["headers"]["origin"] || event["headers"]["Origin"] || "*";
   let result = "";
   // the -L makes it follow redirects, which is important
-  let { stdout, stderr } = await exec(`curl -L ${epub_uri} > /tmp/book.epub`);
+  let { stdout, stderr } = await exec(
+    `curl -L '${epub_uri}' -H 'Sec-Fetch-Mode: cors'  --compressed  > /tmp/book.epub`
+  );
   // const { stdout, stderr } = await exec("java");
 
   try {
